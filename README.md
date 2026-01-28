@@ -2,9 +2,10 @@
 Welcome to my [Reed College senior research thesis](https://www.reed.edu/academics/thesis.html) ('25-'26) on HCI/accessible web UI/UX for older users (a.k.a. `thes`)! 
 
 This `README.md` at a glance:
-- [👩🏻‍🔬 DESCRIPTION](https://github.com/00eemsy/thes/edit/main/README.md#%E2%80%8D-description)
-- [🤔 FAQS](https://github.com/00eemsy/thes/edit/main/README.md#-faqs)
-- [📚 MY "TECH" STACK](https://github.com/00eemsy/thes/edit/main/README.md#-my-tech-stack)
+- [👩🏻‍🔬 DESCRIPTION](#--------description)
+- [🤔 FAQS](#---faqs)
+- [📚 MY "TECH" STACK](#---my--tech--stack)
+- [🙏 ACKS](#---acks)
 
 ## 🤔 FAQS
 _💭: What is my thesis about?_
@@ -26,3 +27,6 @@ Here's what I used to "deploy" my senior thesis:
 * `Prolific` (for recruitment) ➡️ Demos/link coming soon...
 * `Python3` (for data analysis) ➡️ Coming to repository soon...
 * `Overleaf` (for LaTeX-ing my research paper/senior thesis) ➡️ Link to thesis paper coming soon...
+
+## 🙏 ACKS
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
