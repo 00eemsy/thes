@@ -8,6 +8,7 @@ import statsmodels.formula.api as smf
 df = pd.read_csv('thesis_data.csv')
 df = df.dropna(axis=1, how='all') # gets rid of empty columns,,, which the csv somehow came w?
 df = df.dropna(axis=0, how='all') # and rows too!
+df["Website"] = df["Website"].astype("category")
 
 # ---------------- W/O EXCLUSIONS ----------------
 # FIXME: is this going to be ok? are there other blanks?
@@ -21,9 +22,9 @@ m3 = smf.mixedlm("Speed ~ Age + Icon + Website", df, groups=df["Maze_ID"]).fit(r
 
 m4 = smf.mixedlm("Speed ~ Age * Icon + Website", df, groups=df["Maze_ID"]).fit(reml=False)
 
-print(m0.summary())
-print(m1.summary())
-print(m2.summary())
+# print(m0.summary())
+# print(m1.summary())
+# print(m2.summary())
 print(m3.summary())
 print(m4.summary())
 
