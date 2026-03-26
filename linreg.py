@@ -91,10 +91,55 @@ m4 = smf.mixedlm("Misclick_Rate ~ Age * Icon + Website", no_w1_w3_df, groups=no_
 # print(m0.summary())
 # print(m1.summary())
 # print(m2.summary())
+# print(m3.summary())
+# print(m4.summary())
+
+# for name, model in zip(["m0","m1","m2","m3","m4"], [m0,m1,m2,m3,m4]):
+#     print(name, model.aic)
+
+
+# ---------------- >80% MR ----------------
+
+over_80_mr_df = df.query("Misclick_Rate <= 80")
+over_80_mr_df["Website"] = over_80_mr_df["Website"].astype("category")
+
+# speed
+m0 = smf.mixedlm("Speed ~ 1", over_80_mr_df, groups=over_80_mr_df["Maze_ID"]).fit(reml=False) 
+
+m1 = smf.mixedlm("Speed ~ Age", over_80_mr_df, groups=over_80_mr_df["Maze_ID"]).fit(reml=False)
+
+m2 = smf.mixedlm("Speed ~ Age + Icon", over_80_mr_df, groups=over_80_mr_df["Maze_ID"]).fit(reml=False)
+
+m3 = smf.mixedlm("Speed ~ Age + Icon + Website", over_80_mr_df, groups=over_80_mr_df["Maze_ID"]).fit(reml=False)
+
+m4 = smf.mixedlm("Speed ~ Age * Icon + Website", over_80_mr_df, groups=over_80_mr_df["Maze_ID"]).fit(reml=False)
+
+# print(m0.summary())
+# print(m1.summary())
+# print(m2.summary())
+# print(m3.summary())
+# print(m4.summary())
+
+# for name, model in zip(["m0","m1","m2","m3","m4"], [m0,m1,m2,m3,m4]):
+    # print(name, model.aic)
+
+# mr
+m0 = smf.mixedlm("Misclick_Rate ~ 1", over_80_mr_df, groups=over_80_mr_df["Maze_ID"]).fit(reml=False) 
+
+m1 = smf.mixedlm("Misclick_Rate ~ Age", over_80_mr_df, groups=over_80_mr_df["Maze_ID"]).fit(reml=False)
+
+m2 = smf.mixedlm("Misclick_Rate ~ Age + Icon", over_80_mr_df, groups=over_80_mr_df["Maze_ID"]).fit(reml=False)
+
+m3 = smf.mixedlm("Misclick_Rate ~ Age + Icon + Website", over_80_mr_df, groups=over_80_mr_df["Maze_ID"]).fit(reml=False)
+
+m4 = smf.mixedlm("Misclick_Rate ~ Age * Icon + Website", over_80_mr_df, groups=over_80_mr_df["Maze_ID"]).fit(reml=False)
+
+print(m0.summary())
+print(m1.summary())
+print(m2.summary())
 print(m3.summary())
 print(m4.summary())
 
 # for name, model in zip(["m0","m1","m2","m3","m4"], [m0,m1,m2,m3,m4]):
 #     print(name, model.aic)
-
 
