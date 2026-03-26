@@ -179,35 +179,33 @@ total_speed_age_var = total_speed_age.groupby('Age')['Speed'].std()
 # plt.plot([200,200],[80,0], color='red', linestyle='--')
 # plt.show()
 
-user_df = df.groupby('Maze_ID').agg({
-    'Speed': 'sum',
-    'Misclick_Rate': 'mean',
-    'Age': 'first',
-    'Website': 'keep',
-}).reset_index()
+# df_filtered = df.query("Website != 1 and Website != 3")
+# user_df = df_filtered.groupby('Maze_ID').agg({
+#     'Speed': 'sum',
+#     'Misclick_Rate': 'mean',
+#     'Age': 'first',
+# }).reset_index()
 
-for age in user_df['Age'].unique():
-    subset = user_df[user_df['Age'] == age]
-    subset = subset.query("Website != 1 and Website != 3")
-    print(subset)
+# for age in user_df['Age'].unique():
+#     subset = user_df[user_df['Age'] == age]
 
-    plt.scatter(
-        subset['Speed'],
-        subset['Misclick_Rate'],
-        label=f'Age {age}'
-    )
+#     plt.scatter(
+#         subset['Speed'],
+#         subset['Misclick_Rate'],
+#         label=f'Age {age}'
+#     )
 
-plt.legend()
-plt.xlabel('Speed (s)')
-plt.ylabel('Misclick Rate (%)')
-plt.title('Total Speed vs Average Misclick Rate by Age Group')
-ax = plt.gca()
-ax.xaxis.set_major_locator(tck.MultipleLocator(10))
-ax.yaxis.set_major_locator(tck.MultipleLocator(5))
-plt.xticks(rotation=45)
+# plt.legend()
+# plt.xlabel('Speed (s)')
+# plt.ylabel('Misclick Rate (%)')
+# plt.title('Total Speed vs Average Misclick Rate by Age Group (Excluding Websites 1 and 3)')
+# ax = plt.gca()
+# ax.xaxis.set_major_locator(tck.MultipleLocator(10))
+# ax.yaxis.set_major_locator(tck.MultipleLocator(5))
+# plt.xticks(rotation=45)
 # plt.plot([0,200], [80,80], color='red', linestyle='--')
 # plt.plot([200,200],[80,0], color='red', linestyle='--')
-plt.show()
+# plt.show()
 
 # user_df = df.groupby('Maze_ID').agg({
 #     'Speed': 'sum',
